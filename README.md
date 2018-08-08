@@ -2,6 +2,7 @@
 In this dataset we have ~150 faces which we are tasked with labelling appropriately. We are given a 128 dimensional vector which represent the facial image. We do not attempt to recreate these vectors.
 
 Note that if you wish to run the models, I moved all the images into the `data` subdirectory. 
+```
 .
 ├── FaceNet.ipynb
 ├── README.md
@@ -10,6 +11,7 @@ Note that if you wish to run the models, I moved all the images into the `data` 
 │   ├── Abdullah_Gul
 │   │   ├── Abdullah_Gul_0001.npy
 ...
+```
 
 ## Tensorboard Visualisation
 The jupyter notebook contains the visualisation instructions of these embeddings. We sample 10 images from 10 classes and visualise these on tensorboard. However, there are no noteable clusters that emerge.
@@ -65,7 +67,9 @@ with tf.name_scope('triplet_loss'):
 The aim of which is to reduce the distance between anchors and positives while maximising distance between anchors and negatives. `alpha` is a small positive constant, in this case 0.3.
 
 However, as seen below, the loss converges to `alpha`. 
+
 ![loss](./losses.png)
+
 This is due to the fact that the new embedding vectors all converge to a singular vector such that `out_a ~ out_p ~ out_n`.
 
 Initially I took for each anchor, the worst positive example, and worst negative example (in that its too close to anchor). In this case `neg_dist ~ 0`, and did not contribute much to the final loss. Therefore, I changed the negative example to be randomly chosen. Unfortunately this didnt help much either, with the loss still converging to `alpha`. Selecting the right positive and negative examples seem to be key to getting FaceNet working.
