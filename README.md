@@ -38,7 +38,7 @@ model.summary()
 ```
 During training we reduced the learning rate when the _validation loss_ achieved plateau. This was done by further splitting the training set into a 5% validation set and using keras `callbacks` function.
 
-We were able to achieve an accuracy of 6% on the test set (which is better than a random estimate 1/158).
+We were able to achieve an accuracy of 7.6% on the test set (which is better than a random estimate 1/158).
 
 ## Attempted FaceNet
 This section was simply an attempt as I could not get FaceNet working on a meaningful way. As the embeddings were precomputed, I attempted to create a new 15 dimensional embedding by having two layers:
@@ -77,4 +77,4 @@ Initially I took for each anchor, the worst positive example, and worst negative
 Had this worked it would have been the most robust to new faces entering the system since there is a distance metric.
 
 ## KNN
-This simple algorithm achieved the highest accuracy. Using 5 neighbours on **the original embeddings** the algorithm was able to achieve 7% accuracy.
+This simple algorithm achieved the highest accuracy. Using 5 neighbours on **the original embeddings** the algorithm was able to achieve 7.7% accuracy.
