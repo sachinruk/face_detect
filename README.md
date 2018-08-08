@@ -77,4 +77,4 @@ Initially I took for each anchor, the worst positive example, and worst negative
 Had this worked it would have been the most robust to new faces entering the system since there is a distance metric.
 
 ## KNN
-This simple algorithm achieved the highest accuracy. Using 5 neighbours on **the original embeddings** the algorithm was able to achieve 7.7% accuracy.
+This simple algorithm achieve a high accuracy. Using 5 neighbours on **the original embeddings** the algorithm was able to achieve 7% accuracy.
